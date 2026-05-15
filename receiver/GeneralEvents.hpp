@@ -41,6 +41,15 @@ struct ChannelData
 	  finetune(0)
     {}
 
+    template<class Archive>
+    void serialize(Archive& ar, const unsigned int)
+    {
+	ar & standard;
+	ar & channel;
+	ar & frequency;
+	ar & finetune;
+    }
+	    
     std::string standard;
     std::string channel;
     int frequency;
